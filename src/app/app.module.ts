@@ -46,7 +46,7 @@ import { NotFoundComponent } from './not-found/not-found.component';
         SharedModule.forRoot(),
         RouterModule.forRoot(ROUTES, {preloadingStrategy: PreloadAllModules})
     ],
-    providers: [{provide: LocationStrategy, useClass: HashLocationStrategy},{provide: LOCALE_ID, useValue: 'pt-BR'}], //primeiro provider é usado para adicionar o # na url da página, assim o navegar é obrigado a carregar o index.html no navegador, segundo é usado para pipes de formatação de moedas
+    providers: [{provide: LOCALE_ID, useValue: 'pt-BR'}],
     bootstrap: [AppComponent],
 
 })
