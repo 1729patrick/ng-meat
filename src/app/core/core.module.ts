@@ -5,7 +5,7 @@ import { RestaurantService } from "../restaurants/restaurants.service";
 import { ShoppingCartService } from "../restaurant-detail/shopping-cart/shopping-cart-service";
 
 @NgModule({
-providers: [ShoppingCartService, RestaurantService, OrderService],
+    providers: [ShoppingCartService, RestaurantService, OrderService],
 })
 export class CoreModule{
 

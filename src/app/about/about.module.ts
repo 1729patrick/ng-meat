@@ -5,11 +5,11 @@ import { AboutComponent } from "app/about/about.component";
 
 
 const ROUTES: Routes = [
-  {path: '', component: AboutComponent}
+    {path: '', component: AboutComponent}
 ]
 @NgModule({
-  declarations: [AboutComponent],
-  imports: [RouterModule.forChild(ROUTES)]
+    declarations: [AboutComponent],
+    imports: [RouterModule.forChild(ROUTES)]
 })
 
 export class AboutModule{}

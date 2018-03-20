@@ -6,23 +6,23 @@ import { RestaurantService} from '../../restaurants/restaurants.service';
 import {MenuItem} from '../menu-item/menu-item.model';
 
 @Component({
-  selector: 'mt-menu',
-  templateUrl: './menu.component.html'
+    selector: 'mt-menu',
+    templateUrl: './menu.component.html'
 })
 export class MenuComponent implements OnInit {
 
-  menu: Observable<MenuItem[]>
+    menu: Observable<MenuItem[]>
 
-  constructor(private restaurantService: RestaurantService,
-    private route: ActivatedRoute) { }
+    constructor(private restaurantService: RestaurantService,
+        private route: ActivatedRoute) { }
 
-    ngOnInit() {
-      this.menu = this.restaurantService
-      .menuOfRestaurant(this.route.parent.snapshot.params['id']);
+        ngOnInit() {
+            this.menu = this.restaurantService
+            .menuOfRestaurant(this.route.parent.snapshot.params['id']);
+        }
+
+        addMenuItem(item: MenuItem){
+            console.log(item);
+        }
+
     }
-
-    addMenuItem(item: MenuItem){
-      console.log(item);
-    }
-
-  }

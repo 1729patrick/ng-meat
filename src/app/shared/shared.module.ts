@@ -14,17 +14,17 @@ import { NotificationService } from '../shared/messages/notification.service';
 
 
 @NgModule({
-  declarations: [InputComponent, RadioComponent, RatingComponent, SnackbarComponent],
-  imports: [CommonModule, FormsModule, ReactiveFormsModule],
-  exports: [InputComponent, RadioComponent, RatingComponent, CommonModule, FormsModule, ReactiveFormsModule, SnackbarComponent ]
+    declarations: [InputComponent, RadioComponent, RatingComponent, SnackbarComponent],
+    imports: [CommonModule, FormsModule, ReactiveFormsModule],
+    exports: [InputComponent, RadioComponent, RatingComponent, CommonModule, FormsModule, ReactiveFormsModule, SnackbarComponent ]
 })
 export class SharedModule{
-  static forRoot(): ModuleWithProviders {
-    return {
-      ngModule: SharedModule,
-      providers: [ShoppingCartService, RestaurantService, OrderService, NotificationService]
+    static forRoot(): ModuleWithProviders {
+        return {
+            ngModule: SharedModule,
+            providers: [ShoppingCartService, RestaurantService, OrderService, NotificationService]
+        }
     }
-  }
 
 }
 

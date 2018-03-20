@@ -3,6 +3,7 @@ import { NgModule, LOCALE_ID } from '@angular/core';
 import { HttpModule } from '@angular/http';
 import { RouterModule, PreloadAllModules } from '@angular/router';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
+import { LocationStrategy, HashLocationStrategy } from '@angular/common';
 
 import { ROUTES } from './app.routes';
 import { AppComponent } from './app.component';
@@ -17,34 +18,36 @@ import { MenuItemComponent } from './restaurant-detail/menu-item/menu-item.compo
 import { ReviewsComponent } from './restaurant-detail/reviews/reviews.component';
 import { OrderSummaryComponent } from './order-summary/order-summary.component';
 import { SharedModule } from './shared/shared.module';
+import { NotFoundComponent } from './not-found/not-found.component';
 
 
 
 
 
 @NgModule({
-  declarations: [
-    AppComponent,
-    HeaderComponent,
-    HomeComponent,
-    RestaurantsComponent,
-    RestaurantComponent,
-    RestaurantDetailComponent,
-    MenuComponent,
-    ShoppingCartComponent,
-    MenuItemComponent,
-    ReviewsComponent,
-    OrderSummaryComponent
-  ],
-  imports: [
-    BrowserModule,
-    BrowserAnimationsModule,
-    HttpModule,
-    SharedModule.forRoot(),
-    RouterModule.forRoot(ROUTES, {preloadingStrategy: PreloadAllModules})
-  ],
-  providers: [{provide: LOCALE_ID, useValue: 'pt-BR'}],
-  bootstrap: [AppComponent],
+    declarations: [
+        AppComponent,
+        HeaderComponent,
+        HomeComponent,
+        RestaurantsComponent,
+        RestaurantComponent,
+        RestaurantDetailComponent,
+        MenuComponent,
+        ShoppingCartComponent,
+        MenuItemComponent,
+        ReviewsComponent,
+        OrderSummaryComponent,
+        NotFoundComponent
+    ],
+    imports: [
+        BrowserModule,
+        BrowserAnimationsModule,
+        HttpModule,
+        SharedModule.forRoot(),
+        RouterModule.forRoot(ROUTES, {preloadingStrategy: PreloadAllModules})
+    ],
+    providers: [{provide: LocationStrategy, useClass: HashLocationStrategy},{provide: LOCALE_ID, useValue: 'pt-BR'}], //primeiro provider é usado para adicionar o # na url da página, assim o navegar é obrigado a carregar o index.html no navegador, segundo é usado para pipes de formatação de moedas
+    bootstrap: [AppComponent],
 
 })
 export class AppModule { }
