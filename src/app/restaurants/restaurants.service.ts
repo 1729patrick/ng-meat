@@ -8,7 +8,7 @@ import 'rxjs/add/operator/catch';
 import { MEAT_API } from '../app.api'; //json
 import { Observable } from 'rxjs/Observable'; //json
 import 'rxjs/add/operator/map'; //json
-import { ErrorHandler } from '../app.error-handler';
+
 
 @Injectable()
 export class RestaurantService {
